@@ -1,0 +1,67 @@
+# ─────────────────────────────────────────────
+# Chinese BabyLM Evaluation Pipeline Config
+# ─────────────────────────────────────────────
+
+# 这是myconfig.yaml文件，将该文件放入chinese-babylm-pipeline-final/configs/目录下
+# 其中，隐藏任务的超参数严格按照默认值执行；非隐藏任务的超参数我们做了一些调整
+# 执行 python pipeline.py eval --config configs/myconfig.yaml
+
+models:
+  - path: LuRr/babylm-chinese-deberta-v2-14m-CL
+    backend: mlm
+
+tasks:
+  zero_shot:
+    - zhoblimp
+    - xcomps_zh
+    - hanzi_structure
+    - hanzi_pinyin
+    - hanzi_structure_hidden
+    - hanzi_pinyin_hidden
+  cogbench:
+    - word_fmri
+    - fmri
+  finetune:
+    - afqmc
+    - ocnli
+    - tnews
+    - cluewsc2020
+    - c3
+    - diagnostic_nli
+
+eval_dir: evaluation_data
+results_dir: results
+save_item_with_unk: true
+
+finetune_hparams:
+  lr: 2.0e-5
+  batch_size: 32
+  max_epochs: 10
+  sequence_length: 128
+  seed: 42
+  task_overrides:
+    afqmc:
+      lr: 2.0e-5
+      batch_size: 16
+      max_epochs: 15
+    ocnli:
+      lr: 2.0e-5
+      batch_size: 32
+      max_epochs: 10
+    tnews:
+      lr: 3.0e-5
+      batch_size: 32
+      max_epochs: 15
+    cluewsc2020:
+      lr: 5.0e-5
+      sequence_length: 256
+      batch_size: 8
+      max_epochs: 30
+    c3:
+      lr: 3.0e-5
+      batch_size: 32
+      max_epochs: 10
+    diagnostic_nli:
+      lr: 3.0e-5
+      batch_size: 32
+      max_epochs: 10

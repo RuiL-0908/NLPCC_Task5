@@ -1,0 +1,10 @@
+# --- Deep Learning Framework ---
+torch==2.11.0+cu130
+
+# --- Hugging Face Ecosystem ---
+transformers==5.8.1
+datasets==5.0.0
+accelerate==1.14.0
+
+# --- Configuration & Evaluation ---
+pyyaml==6.0.3
