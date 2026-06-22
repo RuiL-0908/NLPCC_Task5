@@ -6,8 +6,11 @@
 # 其中，隐藏任务的超参数严格按照默认值执行；非隐藏任务的超参数我们做了一些调整
 # 执行 python pipeline.py eval --config configs/myconfig.yaml
 
+# 快速验证：直接用我们训练好后上传在huggingface上的模型 
+# path: LuRr/babylm-chinese-deberta-v2-14m-CL
+
 models:
-  - path: LuRr/babylm-chinese-deberta-v2-14m-CL
+  - path: LuRr/babylm-chinese-deberta-v2-14m-CL # 替换为训练好的模型本地路径
     backend: mlm
 
 tasks:
