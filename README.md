@@ -1,14 +1,4 @@
----
-language:
-- zh
-license: apache-2.0
-tags:
-- chinese-babylm
-- deberta-v2
-- masked-lm
-datasets:
-- chinese-babylm-org/babylm-zho-100M
----
+
 
 #  中文 BabyLM - DeBERTa-V2 (14M) 
 **挑战赛:** 2026 中文 BabyLM 挑战赛 (2026 Chinese BabyLM Challenge)
