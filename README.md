@@ -1,5 +1,5 @@
 #  中文 BabyLM - DeBERTa-V2 (14M) 
-**挑战赛:** 2026 中文 BabyLM 挑战赛 (2026 Chinese BabyLM Challenge)
+**挑战赛:** 2026 中文 BabyLM 挑战赛 (2026 ChineseBabyLM Challenge)
 
 官方仓库地址：https://github.com/chinese-babylm/chinese-babylm-pipeline-final
 
